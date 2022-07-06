@@ -2,16 +2,26 @@
 #include<math.h>
 
 int main() {
-	char str[11];
-	scanf("%s", str);
-	int a=0;
+	int t; scanf("%d", &t);
+	while(t--) {
+		
+		int n, r=0; scanf("%d", &n);
 	
-	printf("%d", str[1]);
-//	for(int i=0;i<strlen(str);i++){
-//		a += (int)str[i];
-//		printf("%s\n", str[i]);
-//	}
-//	printf("%d",a);
+		while(n>0) {
+			r += n%10;
+			n/=10;
+		}
 	
+		printf("%d\n", r);
+	}
+//	int n, r=0; scanf("%d", &n);
+//	
+//		while(n>0) {
+//			r += n%10;
+//			n/=10;
+//		}
+//	
+//		printf("%d", r);
+
 	return 0;
 }
