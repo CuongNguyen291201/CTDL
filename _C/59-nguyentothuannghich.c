@@ -24,12 +24,18 @@ int c2(int n){
 int main() {
 	int t; scanf("%d", &t);
 	while(t--){
-		int a, b; scanf("%d%d", &a, &b);
+		int a, b, count=0; scanf("%d%d", &a, &b);
 		
 		for(int i=a; i<=b;i++){
 			if (check(i)==1 && c2(i)==1) {
+				count++;
+				if (count == 11) {
+					count = 0;
+					printf("\n");
+				}
 				printf("%d ", i);
 			}
+			
 		}
 		printf("\n");
 	}
