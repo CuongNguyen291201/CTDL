@@ -2,9 +2,9 @@
 #include<math.h>
 
 int main() {
-	int t; scanf("%d", &t);
+	int t, sum=0; scanf("%d", &t);
 	while(t--){
-		int n, dem; scanf("%d", &n);
+		int n, res=1, sum=0, dem; scanf("%d", &n);
 		for(int i=2;i<=n;i++){
 			dem=0;
 			while(n%i==0){
@@ -12,12 +12,14 @@ int main() {
 				n/=i;
 			}
 			if (dem) {
-				printf("%d ", i);
-				if (dem>1) printf("%d ", dem); 
+				res *= i;
+				sum = sum + pow(i, dem);
+//				printf("%d ", i);
+//				if (dem>1) printf("%d ", dem);
 			}
 		}
-		printf("\n");
 	}
+		printf("%d\n", sum);
 	return 0;
 	
 	
