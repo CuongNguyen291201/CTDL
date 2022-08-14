@@ -11,7 +11,7 @@ void result(){
 }
 
 void Try(int i){
-	for(int j=a[i-1]+1;j<=n-k+i;j++){
+	for(int j=n-k+i;j>=a[i-1]+1;j--){
 		a[i]=j;
 		if (i==k) result();
 		else Try(i+1);

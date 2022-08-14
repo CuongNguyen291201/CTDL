@@ -2,11 +2,8 @@
 using namespace std;
 
 int n,k,m=1;
-string a[10000], b[10000];
-
-stack<string> newA;
-
-int r[10000], check[10000]={0};
+int a[10000], b[10000], r[10000];
+stack<int> newA;
 
 void result(){
 	for(int i=1;i<=k;i++){
@@ -23,27 +20,21 @@ void Try(int i){
 	}
 }
 
-
 int main(){
 	cin>>n>>k;
-	for(int i=0;i<n;i++) {
-		cin>>a[i];
-	}
-
+	for(int i=0;i<n;i++) cin>>a[i];
 	sort(a, a+n);
 	newA.push(a[0]);
 	b[0]=a[0];
 	
 	for(int i=1;i<n;i++){
-		if (newA.size()!=0 && newA.top()!=a[i]){
+		if (newA.size()!=0 && newA.top()!=a[i]) {
 			newA.push(a[i]);
 			b[m]=a[i];
 			m++;
 		}
 	}
-
 	
 	Try(1);
-	
 	return 0;
 }
